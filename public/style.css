@@ -1,0 +1,175 @@
+/* styles */
+/* called by your view template */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+/*   height: calc(100vh - 50px); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro span {
+  font-style: italic;
+  background: goldenrod;
+  padding: 4px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+p {
+  max-width: 450px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 25px;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0,0,0, 1);
+  display: none;
+}
+
+.button {
+  border: 2px solid black;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 18px;
+}
+
+#holiday-description {
+/*  animation-name: slidein;
+  animation-duration: 3s; */
+}
+
+#holiday-block {
+  transition: height 200ms ease-in-out;
+  overflow: hidden;
+  border: 2px solid goldenrod;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  text-align: center;
+}
+
+@media(min-width: 420px){
+  #holiday-block {
+    text-align: left;
+  }
+}
+
+#holiday-block .description {
+  line-height: 20px;
+}
+
+.button:hover {
+  box-shadow: 4px 4px 0 0 goldenrod;
+}
+
+#date-preface {
+/*   background-color: gold; */
+  display: inline-block;
+/*   padding: 4px; */
+}
+
+#holiday-name {
+}
+
+.holiday-name--container {
+  display: flex;
+}
+
+#cal {
+  display: flex;
+  flex-direction: column;
+}
+
+.week {
+  
+}
+
+.day {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  border: 2px solid goldenrod;
+  margin: 6px;
+}
+
+.day:hover {
+  box-shadow: 4px 4px 0 0 gold;
+}
+
+.branch {
+  width: 65px;
+  fill: gold;
+  transition: transform .5s ease-in-out;
+}
+
+.left-branch {
+  animation: waftLeft 1s linear;
+  animation-delay: .25s;
+}
+
+.right-branch {
+  animation: waftRight 1s linear;
+  animation-delay: .25s;
+}
+
+@keyframes waftLeft {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-2px, 4px) rotate(-8deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes waftRight {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(2px, 4px) rotate(8deg);
+  }
+ 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+#holiday-block:hover .right-branch {
+  transform: translate(2px, 4px) rotate(8deg);
+}
+
+#holiday-block:hover .left-branch {
+  transform: translate(-2px, 4px) rotate(-8deg);
+}
